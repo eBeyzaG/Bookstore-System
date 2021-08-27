@@ -1,0 +1,14 @@
+.applicationDiv {
+    color: cornflowerblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+
+}
+.applicationContent{
+    width: 20%;
+    margin: 1%;
+    text-align: center;
+}

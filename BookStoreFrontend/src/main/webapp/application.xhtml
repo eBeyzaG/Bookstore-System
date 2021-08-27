@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Created by IntelliJ IDEA.
+  User: gurer
+  Date: 27.08.2021
+  Time: 20:50
+-->
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+    <title>Book Store Management System</title>
+    <link rel="stylesheet" href="applicationStyle.css"/>
+</h:head>
+
+<h:body>
+    <div class="applicationDiv">
+        <div class="applicationContent">
+            <h:form id="newBook">
+                <p>Book ID: <h:inputText label="Book ID: " id="bookId"  binding="#{bookID}" required="true"/></p>
+                <p>Book Name: <h:inputText label="Book Name: " id="bookName" binding="#{bookName}" required="true"/></p>
+                <p>Author Name: <h:inputText label="Author Name: " id="authorName" binding="#{authorName}" required="true"/></p>
+                <p>Publisher Name: <h:inputText label="Publisher Name: " id="publisherName" binding="#{publisherName}" required="true"/></p>
+                <br/>
+                <h:commandButton  value="Submit" type="submit" action="#{applicationBean.addBook(bookID.value, bookName.value, authorName.value, publisherName.value)}">
+                </h:commandButton>
+
+            </h:form>
+
+            <h:commandButton value="List Books" action="#{applicationBean.books}" />
+        </div>
+    </div>
+
+</h:body>
+
+</html>

@@ -1,0 +1,28 @@
+body{
+   font-family: Charter;
+}
+h2{
+   color: darkblue;
+}
+.loginDiv {
+   color: cornflowerblue;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   height: 30%;
+
+}
+.loginContent{
+   width: 20%;
+   margin: 1%;
+   text-align: center;
+}
+#resetButton{
+   color: darkblue;
+   border: solid darkblue;
+}
+.submitButton{
+   color: darkblue;
+   border: solid darkblue;
+}

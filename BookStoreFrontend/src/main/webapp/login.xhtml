@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Created by IntelliJ IDEA.
+  User: gurer
+  Date: 27.08.2021
+  Time: 17:50
+-->
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+    <title>Login Page</title>
+
+    <link rel="stylesheet" href="loginStyle.css"/>
+</h:head>
+
+<h:body>
+    <div class="loginDiv">
+        <div class="loginContent">
+            <h2>Welcome, please login</h2>
+            <h:form id="loginform">
+                <p>Username:
+                    <h:inputText id="username" value="#{loginBean.username}" required="true"/>
+                </p>
+                <p>Password:
+                    <h:inputSecret id="password" value="#{loginBean.password}" required="true"/>
+                </p>
+                <p>
+                    <h:commandButton styleClass="submitButton" value="Login" type="submit" action="#{loginBean.doLogin}">
+                    </h:commandButton>
+
+                    <input id="resetButton" type="reset" value="Clear"/>
+                </p>
+            </h:form>
+
+        </div>
+
+
+    </div>
+    <script type="text/javascript">
+        // Force safari to refresh the page
+        // if a cached copy was loaded
+        // from the browser back-forward cache.
+        window.onpageshow = function(e) {
+            if (e.persisted) {
+                window.location.reload();
+            }
+        }
+    </script>
+</h:body>
+
+</html>
