@@ -37,18 +37,29 @@
     <security-role>
         <role-name>admin</role-name>
     </security-role>
+    <security-role>
+        <role-name>mod</role-name>
+    </security-role>
+    <security-role>
+        <role-name>user</role-name>
+    </security-role>
 
     <security-constraint>
         <web-resource-collection>
-            <web-resource-name>BookOps</web-resource-name>
-            <url-pattern>/application.jsf</url-pattern>
+            <web-resource-name>BookAdding</web-resource-name>
+            <url-pattern>/application.xhtml</url-pattern>
+            <url-pattern>/logHistory.xhtml</url-pattern>
+            <url-pattern>/storage.xhtml</url-pattern>
+            <url-pattern>/deleteBook.xhtml</url-pattern>
             <http-method>GET</http-method>
             <http-method>POST</http-method>
         </web-resource-collection>
         <auth-constraint>
-            <role-name>admin</role-name>
+            <role-name>user</role-name>
         </auth-constraint>
     </security-constraint>
+
+
 
     <login-config id="LoginConfig">
         <auth-method>FORM</auth-method>

@@ -1,4 +1,4 @@
-<server description="Storage Log Server">
+<server description="Storage LogOps Server">
 
     <featureManager>
         <feature>jaxrs-2.1</feature>
@@ -13,15 +13,15 @@
 
 
     <variable name="default.http.port" defaultValue="44300"/>
-    <variable name="default.https.port" defaultValue="44301" />
+    <variable name="default.https.port" defaultValue="44301"/>
 
-    <keyStore id="defaultKeyStore" password="secret" />
+    <keyStore id="defaultKeyStore" password="secret"/>
 
     <httpEndpoint id="defaultHttpEndpoint"
                   host="*"
                   httpPort="${default.http.port}"
                   httpsPort="${default.https.port}"
     />
-    <webApplication location="storageLog.war" context-root="/" />
+    <webApplication location="storageLog.war" context-root="/"/>
 
 </server>

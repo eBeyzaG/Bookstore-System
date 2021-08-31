@@ -15,7 +15,7 @@
     <variable name="default.http.port" defaultValue="8080"/>
     <variable name="default.https.port" defaultValue="8443" />
 
-    <keyStore id="defaultKeyStore" password="bookStorePwd" />
+    <keyStore id="defaultKeyStore" password="secret" />
 
     <httpEndpoint id="defaultHttpEndpoint"
                   host="*"

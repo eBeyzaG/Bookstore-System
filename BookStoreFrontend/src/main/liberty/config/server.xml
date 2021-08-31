@@ -1,4 +1,4 @@
-<server description="Book Store Frontend">
+<server description="model.Book Store Frontend">
     <featureManager>
         <feature>jaxrs-2.1</feature>
         <feature>jsonp-1.1</feature>
@@ -20,16 +20,25 @@
                   httpsPort="${default.https.port}"
                   id="defaultHttpEndpoint" />
 
-    <keyStore id="defaultKeyStore" password="bookStorePwd"/>
+    <keyStore id="defaultKeyStore" password="secret"/>
 
     <basicRegistry id="basic" realm="WebRealm">
 
         <user name="beyza" password="beyzasifre" />
+        <user name="ali" password="alisifre" />
+        <user name="ayse" password="aysesifre"/>
 
         <group name="adminGroup">
-            <user name="beyza" />
+            <member name="beyza" />
         </group>
-
+        <group name="modGroup">
+            <member name="ayse" />
+        </group>
+        <group name="userGroup">
+            <member name="ali" />
+            <member name="beyza" />
+            <member name="ayse" />
+        </group>
 
     </basicRegistry>
 
@@ -38,10 +47,16 @@
             <security-role name="admin">
                 <group name="adminGroup" />
             </security-role>
+            <security-role name="user">
+                <group name="userGroup" />
+            </security-role>
+            <security-role name="mod">
+                <group name="modGroup"/>
+            </security-role>
         </application-bnd>
     </application>
 
-    <jwtBuilder id="jwtBookStoreBuilder" issuer="http://openliberty.io" expiry="12h" />
+    <jwtBuilder id="jwtBookStoreBuilder" issuer="http://openliberty.io" expiry="24h" />
     <ssl id="defaultSSLConfig" trustDefaultCerts="true" />
 
 </server>

@@ -2,8 +2,8 @@
 <!--
   Created by IntelliJ IDEA.
   User: gurer
-  Date: 27.08.2021
-  Time: 17:50
+  Date: 31.08.2021
+  Time: 14:30
 -->
 <!DOCTYPE html
         PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
@@ -13,10 +13,18 @@
       xmlns:h="http://java.sun.com/jsf/html">
 
 <h:head>
-    <title>Nothing to see here...</title>
+    <title>Log History</title>
+    <link rel="stylesheet" href="stylesheets/applicationStyle.css" />
 </h:head>
 
 <h:body>
+    <div class="applicationDiv">
+
+        <div class="applicationContent">
+            <h3>Log History</h3>
+            <h:outputText value="#{applicationBean.logHistory}" escape="false"/>
+        </div>
+    </div>
 
 </h:body>
 

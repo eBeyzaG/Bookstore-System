@@ -1,14 +1,22 @@
 .applicationDiv {
-    color: cornflowerblue;
+    color: black;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 50%;
+    height: 70%;
 
 }
 .applicationContent{
-    width: 20%;
+    width: 40%;
     margin: 1%;
     text-align: center;
+}
+h3{
+    color: darkblue;
+}
+.bookTable{
+    margin: auto;
+    color: black;
+
 }

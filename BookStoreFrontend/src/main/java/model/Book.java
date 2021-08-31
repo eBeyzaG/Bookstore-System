@@ -1,3 +1,5 @@
+package model;
+
 import javax.enterprise.context.RequestScoped;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,6 +13,16 @@ public class Book {
 
     public static List<Book> bookList = new ArrayList<>();
     private static int bookIDcounter = 0;
+
+    public static String createStringFromList(List<Book> books){
+
+        String str = "";
+
+        for(Book b: books){
+            str += b.getBookID() + "\t" + b.getBookName()+ "\t" + b.authorName + "\t" + b.publisherName + "\n";
+        }
+        return str;
+    }
 
     public Book(){
 

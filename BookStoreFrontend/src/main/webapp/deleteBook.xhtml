@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Created by IntelliJ IDEA.
+  User: gurer
+  Date: 31.08.2021
+  Time: 18:55
+-->
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+    <title>Delete Book</title>
+    <link rel="stylesheet" href="stylesheets/applicationStyle.css"/>
+</h:head>
+
+<h:body>
+    <div class="applicationDiv">
+
+        <div class="applicationContent">
+
+            <p>Enter the ID of the book you want to delete</p>
+            <br/>
+            <h:form>
+            <h:inputText binding="#{bid}"></h:inputText>
+            <h:commandButton value="Delete" type="submit" action="#{applicationBean.deleteBookwithID(bid.value)}"></h:commandButton>
+            <br/><br/>
+            <h:outputText value="#{applicationBean.deleteMessage}"></h:outputText>
+                <br/>
+                <h:commandButton  value="Back" type="submit" action="#{applicationBean.backFromDelete}">
+                </h:commandButton>
+            </h:form>
+        </div>
+    </div>
+
+</h:body>
+
+</html>

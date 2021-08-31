@@ -1,3 +1,6 @@
+package client;
+
+import model.Book;
 import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 
 import javax.enterprise.context.RequestScoped;
@@ -18,4 +21,7 @@ public interface AppClient extends AutoCloseable{
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     Response addBook(@HeaderParam("Authorization") String authHeader, Book book);
+
+    @DELETE
+    Response deleteBookWithID(@HeaderParam("Authorization") String authHeader, int bookID);
 }

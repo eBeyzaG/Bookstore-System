@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Created by IntelliJ IDEA.
+  User: gurer
+  Date: 31.08.2021
+  Time: 14:28
+-->
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+
+>
+
+<h:head>
+    <title>Book Store Storage</title>
+    <link rel="stylesheet" href="stylesheets/applicationStyle.css" />
+</h:head>
+
+<h:body>
+
+    <div class="applicationDiv">
+
+        <div class="applicationContent">
+
+            <h3>Book Storage</h3>
+
+            <h:dataTable styleClass="bookTable" value="#{applicationBean.books}" var="b">
+                <h:column>
+                   <f:facet name="header">Book ID</f:facet>
+                    #{b.bookID}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Book Name</f:facet>
+                    #{b.bookName}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Author</f:facet>
+                    #{b.authorName}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Publisher</f:facet>
+                    #{b.publisherName}
+                </h:column>
+            </h:dataTable>
+
+
+        </div>
+    </div>
+</h:body>
+
+</html>

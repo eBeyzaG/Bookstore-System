@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Created by IntelliJ IDEA.
+  User: gurer
+  Date: 31.08.2021
+  Time: 13:11
+-->
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+    <title>Menu</title>
+    <link rel="stylesheet" href="stylesheets/menuStyle.css"/>
+</h:head>
+
+<h:body>
+    <div class="menuDiv">
+        <h3>Welcome, #{loginBean.username}</h3>
+        <div class="menuContent">
+            <h:button  styleClass="buttons" value="Add a New Book"  outcome="application.xhtml" ></h:button>
+            <br/>
+            <br/>
+            <h:button styleClass="buttons" value="View Books" outcome="storage.xhtml" ></h:button>
+            <br/>
+            <br/>
+            <h:button styleClass="buttons" value="View Log History" outcome="logHistory.xhtml" ></h:button>
+            <br/>
+            <br/>
+            <h:button styleClass="buttons" value="Delete a Book" outcome="deleteBook.xhtml" ></h:button>
+            <br/>
+            <br/>
+            <h:panelGroup>
+                <FORM METHOD="post"  NAME="logout" action="ibm_security_logout">
+                    <input class="buttons" type="submit" value="Log Out" name="logout"/>
+                    <input type="HIDDEN" name="logoutExitPage" value="/login.xhtml" />
+                </FORM>
+            </h:panelGroup>
+
+        </div>
+    </div>
+
+</h:body>
+
+</html>
