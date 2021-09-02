@@ -1,0 +1,50 @@
+openapi: 3.0.3
+info:
+  title: Storage Log API
+  description: App for storing activities in the book system.
+  version: 1.0.0
+servers:
+  - url: http://localhost:44300
+  - url: https://localhost:44301
+paths:
+  /storageLog/logs:
+    description: Logs resource
+    get:
+      summary: Returns the log history.
+      security:
+        - bearerAuth: []
+      responses:
+        200:
+          description: Log history
+          content:
+            application/json:
+              schema:
+                type: STRING
+        401:
+          $ref: '#/components/responses/UnauthorizedError'
+        403:
+          $ref: '#/components/responses/ForbiddenError'
+    post:
+      summary: Adds a new log
+      parameters:
+        - in: query
+          name: log
+          required: true
+          schema:
+            type: STRING
+      security:
+        - bearerAuth: []
+      responses:
+        201:
+          description: Book successfully added.
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  responses:
+    UnauthorizedError:
+      description: Access token is invalid or missing
+    ForbiddenError:
+      description: Role is not authorized for this method

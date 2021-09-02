@@ -1,0 +1,79 @@
+openapi: 3.0.3
+info:
+  title: Book Store Storage API
+  description: App for storing books in the system.
+  version: 1.0.0
+servers:
+  - url: http://localhost:8080
+  - url: https://localhost:8443
+paths:
+  /bookStorage/books:
+    description: Books Resource
+    get:
+      summary: Returns the list of books.
+      security:
+        - bearerAuth: []
+      responses:
+        200:
+          description: List of books
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/books'
+        401:
+          $ref: '#/components/responses/UnauthorizedError'
+        403:
+          $ref: '#/components/responses/ForbiddenError'
+    post:
+      summary: Adds a new book
+      parameters:
+        - in: query
+          name: book
+          required: true
+          schema:
+            $ref: '#/components/schemas/book'
+      security:
+        - bearerAuth: []
+      responses:
+        201:
+          description: Book successfully added.
+    delete:
+      summary: Deletes a book with bookID
+      security:
+        - bearerAuth: [ ]
+      parameters:
+        - in: query
+          name: bookID
+          required: true
+          schema:
+            type: INTEGER
+      responses:
+        200:
+          description: Book deletion successful
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  schemas:
+    book:
+      type: object
+      properties:
+        bookID:
+          type: INTEGER
+        bookName:
+          type: STRING
+        authorName:
+          type: STRING
+        publisherName:
+          type: STRING
+    books:
+      type: array
+      items:
+        $ref: "#/components/schemas/book"
+  responses:
+    UnauthorizedError:
+      description: Access token is invalid or missing
+    ForbiddenError:
+      description: Role is not authorized for this method
